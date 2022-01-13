@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(34, 34, 34, 0.85);
+    scroll-behavior: smooth;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    background: #333;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:active{
+    background-color: #555;
+    border-radius: 20px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f2f6;
+    transition: all .2s ease-in .3s;
+
+    opacity: 0;
+    transform: 
+        translateY(-100%)
+        scale(0);
+}
+
+.menu.is-active {
+    opacity: 1;
+    transform: 
+        translateY(0)
+        scale(1);
+}
+
+.menu > ul > li {
+    text-align: center;
+    margin: 3.5rem 0;
+    font-size: 20px;
+}
+
+.menuClose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    border: 1px solid #555;
+}
+
+.menuClose:hover {
+    border: 1px solid #000;
+}
+
+.headerBg {
+    height: 100%;
+    padding-top: 16%;
+    padding-bottom: 9%;
+    padding-left: 7%;
+    padding-right: 5%;
+    background-color: lightgray;
+    border-radius: 20px;
+    transition: all .2s ease-in;
+}
+
+.headerBg:hover {
+    box-shadow: 0 10px 50px rgba(178,178,178,.26);
+}
+
+.titleContainer {
+    line-height: 150px;
+    margin: 0 0 0 -11px;
+}
+
+h1.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12.3vw;
+    line-height: 38px;
+    margin-top: 20px;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #f8f8f8;
+    padding-right: 2rem;
+}
+
+.headerButton {
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 50px;
+    background-color: #f42c37;
+    z-index: 20;
+    transition: background-color .2s ease-in;
+    overflow: hidden;
+}
+
+.headerButton:hover {
+    background-color: #000;
+}
+
+.menu-btn {
+    display: block;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    opacity: .55;
+}
+
+.headphoneImage {
+    width: auto;
+    position: absolute;
+    top: -32px;
+    z-index: 10;
+}
+
+.headphoneImage > img {
+    margin: 0;
+    width: 80%;
+    position: relative;
+    left: 70px;
+    top: 122px;
+    object-fit: contain;
+}
+
+.mainProducts {
+    padding: 0 2%;
+}
+
+/* Card Containers */
+
+.earphoneCard, .watchCard, .vrCard, .amazonCard {
+    /* width: 330px; */
+    height: 320px;
+    width: 100%;
+}
+
+.laptopCard, .consoleCard {
+    /* width: 660px; */
+    height: 320px;
+    width: 100%;
+}
+
+/**/
+
+.earphoneCard {
+    border-radius: 20px; 
+    background-color: transparent;
+    background-image: linear-gradient(300deg,#363636 13%,#222 38%);
+    transition: all .2s ease-in;
+}
+
+.earphoneCard:hover {
+    box-shadow: 0 20px 40px 0 rgba(178,178,178,.86)!important;
+}
+
+.earphoneCard figcaption h2.cardTitle, .watchCard figcaption h2.cardTitle, .laptopCard h2.cardTitle, .consoleCard figcaption h2, .vrCard figcaption h2, .amazonCard figcaption h2 {
+    letter-spacing: -1.6px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 46px;
+    font-size: 13.2vw;
+}
+
+.earphoneCard button, .consoleCard button {
+    margin-top: 16px;
+    padding: 8px 40px;
+    color: #fff;
+    border-radius: 50px;
+    background-color: #f42c37;
+    transition: background-color .2s ease-in;
+}
+
+.earphoneCard h2 {
+    color: #444444;
+}
+
+.watchCard {
+    background-color: #fdc62e;
+    border-radius: 20px;
+    transition: all .2s ease-in;
+}
+
+.watchCard h2.cardTitle {
+    color: #ffd664;
+}
+
+.watchCard button {
+    margin-top: 16px;
+    padding: 8px 40px;
+    color: #fec53c;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+}
+
+.watchCard:hover {
+    box-shadow: 0 20px 40px 0 #ffe399;
+}
+
+.laptopCard {
+    background-color: transparent;
+    background-image: linear-gradient(90deg,#f42c37 61%,#ff4e59 100%);
+    border-radius: 20px;
+    transition: all .2s ease-in;
+}
+
+.laptopCard h2 {
+    color: #ff6e7a;
+}
+
+.laptopCard button {
+    color: #f53355;
+    margin-top: 16px;
+    padding: 8px 40px;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+}
+
+.laptopCard:hover {
+    box-shadow: 0 20px 40px 0 rgb(244 44 55 / 37%);
+}
+
+.consoleCard {
+    border-radius: 20px;
+    transition: all .2s ease-in;
+    background-color: transparent;
+    background-image: linear-gradient(180deg,#edeced 0%,#eef0f3 100%);
+}
+
+.consoleCard:hover {
+    box-shadow: 0 20px 40px 0 rgb(239 239 239 / 92%);
+}
+
+.consoleCard h2 {
+     color: #fefeff;
+}
+
+.vrCard {
+    background-color: #2dd06f;
+    transition: all .2s ease-in;
+    border-radius: 20px;
+}
+
+.vrCard:hover {
+    box-shadow: 0 20px 40px 0 rgb(45 208 111 / 58%);
+}
+
+.vrCard h2 {
+    color: #58e693;
+}
+
+.vrCard button {
+    margin-top: 16px;
+    padding: 8px 40px;
+    color: #51cd92;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+}
+
+.amazonCard {
+    border-radius: 20px;
+    background-color: #157afe;
+    transition: all .2s ease-in;
+}
+
+.amazonCard h2 {
+    color: #3a98fd;
+}
+
+.amazonCard button {
+    color: #36b6f8;
+    background-color: #fff;
+    margin-top: 16px;
+    padding: 8px 40px;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+}
+
+.amazonCard:hover {
+    box-shadow: 0 20px 40px 0 rgb(24 145 255 / 65%);
+}
+
+.redHeadphoneCard {
+    background-color: transparent;
+    background-image: linear-gradient(90deg,#f42c37 61%,#ff4e59 100%);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.redHeadphoneCard button {
+    color: #f42c37;
+    background-color: #fff;
+    margin-top: 24px;
+    padding: 8px 40px;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+}
+
+.productImage {
+    height: 216px;
+    position: relative;
+}
+
+.productImage > img {
+    border-radius: 20px;
+}
+
+.productImage .onsale {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 47px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    top: 20px;
+    left: 4%;
+    background-color: #f42c37;
+    width: 48px;
+    height: 48px;
+    right: auto;
+    border-radius: 50%;
+}
+
+.discount {
+    color: rgb(185, 184, 184);
+    margin-right: 16px;
+    text-decoration: line-through;
+    transition: all .2s ease-in;
+}
+
+.price {
+    transition: all .2s ease-in-out;
+}
+
+.cartBtn {
+    color: #fff;
+    background-color: #f42c37;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 18px;
+    transition: all .2s ease-in;
+    position: absolute;
+    left: 0;
+    transition: all .2s ease-in .4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+figure .productTitle {
+    transition: all .2s ease-in;
+}
+
+figure:hover .productTitle {
+    color: #ff4e59;
+    font-weight: 900;
+}
+
+figure:hover .price, figure:hover .discount {
+    opacity: 0;
+}
+
+figure:hover .cartBtn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.greenWatchCard {
+    background-color: transparent;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #2ccc71;
+}
+
+.greenWatchCard button {
+    color: #2ccc71;
+    background-color: #fff;
+    margin-top: 24px;
+    padding: 8px 40px;
+    border-radius: 50px;
+    transition: all .2s ease-in;
+}
+
+.gadgetsImg {
+    height: 276px;
+    transition: all .2s ease-in;
+}
+
+.gadgetsImg > img {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.gadgetsImg:hover > img {
+    cursor: pointer;
+    box-shadow: 0 20px 40px 0 rgb(239 239 239 / 92%);
+}
+
+.collab {
+    background-color: #f3f3f2;
+}
+
+.collab article figure img {
+    opacity: .2;
+    transition: all .2s ease-in;
+}
+
+.collab article figure:hover img {
+    opacity: 1;
+}
+
+footer form {
+    width: 100%;
+    position: relative;
+}
+
+input.input {
+    position: relative;
+    /* margin-top: 32px; */
+    width: 100%;
+    background-color: #ebebeb;
+    border-radius: 50px;
+    padding: 14px 25px;
+    outline: none;
+}
+
+form button {
+    position: absolute;
+    right: 14px;
+    bottom: 7px;
+    border-radius: 50px;
+    background-color: #f32c37;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 25px;
+}
+
+@media only screen and (min-width: 780px) {
+    .menu-btn, .menuClose {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        flex-direction: row;
+        z-index: 999;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        transition: all .2s ease-in;
+
+        opacity: 1;
+        transform: 
+            translateY(0)
+            scale(1);
+    }    
+
+    .menu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu > ul > li {
+        margin: 0 20px;
+        color: gray;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .menu > ul > li.active {
+        font-weight: 700;
+        color: black;
+    }
+
+    .headphoneImage > img {
+        left: 90px;
+        top: 92px;
+    }
+
+    .earphoneCard, .watchCard, .vrCard, .amazonCard {
+        /* width: 330px; */
+        height: 373px;
+        width: 100%;
+    }
+    
+    .laptopCard, .consoleCard {
+        /* width: 660px; */
+        height: 373px;
+        width: 100%;
+    }
+
+    .earphoneCard figcaption h2.cardTitle, .watchCard figcaption h2.cardTitle, .laptopCard h2.cardTitle, .consoleCard figcaption h2, .vrCard figcaption h2, .amazonCard figcaption h2 {
+        font-size: 5.2vw;
+        line-height: 86px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    h1.title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12.3vw;
+        line-height: 155px;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: #f8f8f8;
+        padding-right: 2rem;
+    }    
+
+    .headphoneImage > img {
+        left: 110px;
+        top: 92px;
+    }
+
+    .earphoneCard, .watchCard, .vrCard, .amazonCard {
+        /* width: 330px; */
+        height: 340px;
+        width: 47%;
+    }
+    
+    .laptopCard, .consoleCard {
+        /* width: 660px; */
+        height: 478px;
+        width: 100%;
+    }
+
+    .earphoneCard figcaption h2.cardTitle, .watchCard figcaption h2.cardTitle, .laptopCard h2.cardTitle, .consoleCard figcaption h2, .vrCard figcaption h2, .amazonCard figcaption h2 {
+        font-size: 3.2vw;
+    }
+
+    .productImage {
+        height: 339px;
+        position: relative;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) {
+    .earphoneCard, .watchCard, .vrCard, .amazonCard {
+        /* width: 330px; */
+        height: 373px;
+        width: 23%;
+    }
+    
+    .laptopCard, .consoleCard {
+        /* width: 660px; */
+        height: 373px;
+        width: 47%;
+    }
+
+    .productImage {
+        height: 239px;
+        position: relative;
+    }
+    
+}
